@@ -1,0 +1,36 @@
+.active{
+    color: chocolate;
+    border-bottom: 1px solid chocolate;
+}
+.pending{
+    color: red;
+}
+
+li {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  /* Use pseudo-element to create the border effect */
+  li::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1px; /* Height of the border */
+    background-color: #AD7953; /* Border color */
+    transition: width 0.4s ease-in-out;
+  }
+
+  /* On hover, expand the border */
+  li:hover::before {
+    width: 100%; /* Expand to full width */
+  }
+
+  /* Hover text color change */
+  li:hover {
+    color: #AD7953;
+  }
