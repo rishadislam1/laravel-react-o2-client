@@ -19,11 +19,9 @@ const variants = {
   }
 };
 
-const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
-
 // eslint-disable-next-line react/prop-types
-export const MenuItem = ({ i, menus }) => {
-  const style = { border: `2px solid ${colors[i]}` };
+export const MenuItem = ({ menus }) => {
+  const style = { border: `1px solid black` };
   return (
     <motion.li
       variants={variants}
@@ -32,7 +30,7 @@ export const MenuItem = ({ i, menus }) => {
     >
       {/* <div className="icon-placeholder" style={style} /> */}
       { /* eslint-disable-next-line react/prop-types */}
-      <Link to={menus.to} className="text-placeholder p-5 flex mt-3 items-center ms-5" style={style}>{menus.label}</Link>
+      <Link to={menus.to} className="text-placeholder p-5 flex mt-3 items-center ms-5 bg-white" style={style}>{menus.label}</Link>
     </motion.li>
   );
 };

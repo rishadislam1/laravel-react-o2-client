@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import logo from '../../assets/img/LOGO.png';
+import logo from '../../../assets/img/LOGO.png';
 import { NavLink } from "react-router-dom";
 import './Navbar.css';
 import './style.css';

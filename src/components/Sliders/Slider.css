@@ -1,29 +1,150 @@
-.swiper-button-prev,
-.swiper-button-next {
+.swiper-button-prev-custom,
+.swiper-button-next-custom {
   position: absolute;
-  top: 50%;
+  bottom: 10%;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.3); /* Black semi-transparent background */
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px); /* Glass effect (blur) */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Slight shadow for depth */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Optional light border for contrast */
+}
+
+.swiper-button-prev-custom:hover,
+.swiper-button-next-custom:hover {
+  background-color: rgba(0, 0, 0, 0.5); /* Darker on hover */
+}
+
+
+.swiper-button-prev-custom {
+  left: 10%;
+}
+
+.swiper-button-next-custom {
+  left: 15%;
+}
+
+.swiper-button-prev-custom:hover,
+.swiper-button-next-custom:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+.mySwiper {
+  width: 100%;
+  height: 70vh; /* Lower height to 50% of the viewport */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the entire area */
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Black shadow, reduced opacity */
+  backdrop-filter: blur(5px); /* Reduced blur effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-content {
   color: white;
-  width: 40px;
-  height: 40px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.swiper-button-prev-custom,
+.swiper-button-next-custom {
+  color: white;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5); /* Button background with transparency */
   border-radius: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  cursor: pointer;
-  z-index: 10;
+  align-items: center;
 }
 
-.swiper-button-prev {
-  left: 10px;
+.swiper-button-prev-custom:hover,
+.swiper-button-next-custom:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
-.swiper-button-next {
-  right: 10px;
+@media (max-width: 480px) {
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    bottom: 15%; /* Move buttons higher to fit smaller screens */
+  }
+  .swiper-button-prev-custom {
+    left: 10%;
+  }
+  
+  .swiper-button-next-custom {
+    left: 25%;
+  }
 }
 
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  background: rgba(0, 0, 0, 0.5);
+@media (max-width: 900px) and (min-width: 480px) {
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    bottom: 15%; /* Move buttons higher to fit smaller screens */
+  }
+  .swiper-button-prev-custom {
+    left: 10%;
+  }
+  
+  .swiper-button-next-custom {
+    left: 17%;
+  }
+}
+
+/* Adjust for landscape mode on smaller screens */
+@media (max-width: 480px) and (orientation: landscape) {
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+    bottom: 100%; /* Further adjust positioning in landscape */
+  }
+  .swiper-button-prev-custom {
+    left: 20%;
+  }
+  
+  .swiper-button-next-custom {
+    left: 25%;
+  }
 }
